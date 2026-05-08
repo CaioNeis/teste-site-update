@@ -1,0 +1,1762 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SA Móveis e Eletro — móveis e eletrodomésticos com qualidade, preço justo e entrega grátis em Teresina e Timon.">
+    <title>SA - Móveis & Eletro</title>
+    <link rel="icon" type="image/png" href="imagens/logo/favicon.png">
+    <link rel="apple-touch-icon" href="imagens/logo/favicon.png">
+    <link rel="stylesheet" href="estilos/paginaprincipal.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="SA Móveis & Eletro">
+    <meta property="og:description" content="Móveis e eletrodomésticos com qualidade, preço justo e entrega grátis em Teresina e Timon.">
+    <meta property="og:url" content="https://sa-moveis.github.io/">
+    <meta property="og:image" content="https://sa-moveis.github.io/imagens/logo/logo.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4N96KS2NQS"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
+<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-4N96KS2NQS');
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FurnitureStore",
+        "name": "SA Móveis e Eletro",
+        "url": "https://sa-moveis.github.io",
+        "telephone": "+5586981373829",
+        "priceRange": "$$",
+        "image": "https://sa-moveis.github.io/imagens/logo/logo.jpg",
+        "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Teresina",
+        "addressRegion": "PI",
+        "addressCountry": "BR"
+        },
+        "areaServed": 
+        "Teresina",
+        "Timon"
+        ]
+        }
+    </script>
+
+    <style>
+        @charset "UTF-8";
+
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+
+    /* outline: 1px solid #0047BB; */
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Black&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
+
+:root {
+    --vermelho-sa: #d11333; /* vermelho principal */
+    --azul-escuro-sa: #003087; /* azul mais escuro */
+    --azul-medio-sa: #0047BB; /* azul médio */
+    --branco: #FFFFFF;
+    --verdewp: #25D366; /* Verde Whatsapp */
+    --verdeescuro: #17603c;
+    --ss: #d6c8a2;
+    --marrom: #8B5A2B;
+    --roboto: 'Roboto', sans-serif;
+    --Anton: 'Anton', sans-serif;
+    --Black: 'Archivo Black', sans-serif;
+}
+
+/* ============================================= 
+   LAYOUT BASE E CONTAINER PRINCIPAL 
+   ============================================= */
+
+
+body {
+    font-family: var(--roboto);
+    /* animation: fadeIn 0.8s ease-in-out forwards; */
+    position: relative;
+    background-color: #F4F5F7;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+body a {
+    text-decoration: none;
+}
+
+main {
+    margin: 0 auto;
+    max-width: 1250px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.300);
+}
+.imglogo {
+    width: 300px;
+    }
+
+header {
+    background-image: url("/imagens/imagemdafrente/b14.png");
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #b90c29;
+    
+    width: 100%;
+    
+
+}
+
+
+.navbar {    
+    width: 100%;
+    max-width: 1400px;
+    padding: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;    
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+    margin: 10px;
+    border-radius: 10px;
+    
+
+}
+.navbar1 {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    /* backdrop-filter: blur(12px); */
+    background: #b90c29;
+    position: sticky;
+    top: 0px;
+    z-index: 999;
+}
+
+
+.nav-imgg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 15px;
+    flex-shrink: 0;
+}
+
+.nav-imgg img {
+    height: 522px;
+    width: auto;
+    display: none;
+}
+
+/* Menu hambúrguer - inicialmente escondido */
+ .menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 6px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 1100;
+   
+} 
+
+.menu-toggle span {
+    width: 30px;
+    height: 3px;
+    border-radius: 10px;
+    background: white;
+    transition: all 0.35s ease;
+}
+
+/* Animação do hambúrguer quando ativo */
+.menu-toggle.active span:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+}
+
+
+.links {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.links a {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    position: relative;
+    padding: 12px 18px;
+    margin: 0;
+    color: white;
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    border-radius: 12px;
+    transition: all 0.35s ease;
+    text-shadow: none;
+}
+
+.links a::after {
+    content: "";
+    position: absolute;
+    left: 18px;
+    bottom: 8px;
+    width: 0%;
+    height: 2px;
+    background: white;
+    transition: width 0.3s ease;
+}
+
+
+.links a:hover {
+    background: rgba(255,255,255,0.08);
+    transform: translateY(-2px);
+}
+
+.links a#lwtp {
+    background: linear-gradient(135deg, #1faa59, #17603c);
+    border-radius: 14px;
+    padding: 12px 20px;
+    box-shadow: 0 8px 18px rgba(23, 96, 60, 0.35);
+}
+
+.links a#lwtp:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 22px rgba(23, 96, 60, 0.45);
+}
+
+/* Seção principal (front) */
+.front {
+    display: flex;
+    height: 600px;
+    background-image: url("/imagens/imagemdafrente/ChatGPT\ Image\ 5\ de\ mai.\ de\ 2026\,\ 12_17_52.png");
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: cover;
+
+}
+
+.contentp {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100%;
+    margin-left: 100px;
+}
+
+
+.nomeloja {
+    font-family: var(--Black);
+    font-weight: 900;
+    font-size: 4.5rem;
+    color: #1a1919;
+    transition: 0.5s;
+}
+
+    .nomeloja-nav {
+        justify-content: center;
+        align-items: center;
+        display: none;
+        font-family: var(--Black);
+        font-weight: 800;
+        font-size: 1.5em;
+        color: #1a1919;
+        transition: 0.5s;
+    }
+
+#MOVEIS {
+    color: var(--vermelho-sa);
+}
+
+#ELETRO {
+    color: var(--azul-escuro-sa);
+}
+
+.marca {
+    vertical-align: top;
+    font-size: 0.4em;
+}
+
+.contentp h1 {
+    font-family: var(--roboto);
+    font-size: 3em;
+    font-weight: bolder;
+    text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    
+}
+
+.contentp p {
+    font-size: 1.5em;
+    font-family: var(--roboto);
+    text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    margin-top: 30px;
+}
+
+
+
+.linkfrente {
+    display: flex;
+    border-radius: 8px;
+    gap: 10px;
+}
+
+.linkfrente a.a1 {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    font-family: var(--roboto);
+    font-weight: bold;
+    font-size: 1.5em;
+    color: var(--branco);
+    background-image: linear-gradient(to left, #d60d2f, #a00a23);
+    border-radius: 10px;
+    transition: 0.3s;
+    
+    padding: 20px;
+
+    
+}
+
+.linkfrente a#a2 {
+    text-decoration: none;
+    font-family: var(--roboto);
+    font-weight: bold;
+    font-size: 1.5em;
+    border-radius: 10px;
+    color: var(--branco);
+    background: linear-gradient(135deg, #1faa59, #17603c);
+    transition: 0.3s;
+
+    padding: 20px;
+
+    
+
+}
+
+.linkfrente .a1:hover {
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.4);
+}
+
+.linkfrente #a2:hover {
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.4);
+    
+}
+
+/* Categorias */
+.categorias1 {
+    background-color: var(--branco);
+    padding: 10px;
+}
+
+.categorias1 h1 {
+    font-family: var(--Black);
+    font-weight: bolder;
+    color: var(--vermelho-sa);
+    display: flex;
+    justify-content: left;
+    padding-left: 10px;
+    margin: 30px;
+}
+
+.subcategorias1 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    justify-items: center;
+}
+
+.subcategorias1 img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+    display: block;
+}
+
+.subcategorias1 p {
+    margin: 10px;
+    text-align: center;
+    font-family: var(--Black);
+    font-size: 1.6em;
+    font-weight: 500;
+    color: black;
+}
+
+.c1div1, .c1div2, .c1div3, .c1div4 {
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.400);
+    overflow: hidden;
+    transition: 0.5s;
+    background-color: #fff;
+}
+
+.c1div1:hover, .c1div2:hover, .c1div3:hover, .c1div4:hover {
+    transform: scale(0.95)
+}
+
+
+
+
+
+
+
+/* Produtos em destaque */
+.categorias2 {
+    margin: 20px 60px;
+}
+
+.categorias2 h1 {
+    font-family: var(--Black);
+    font-weight: bolder;
+    color: var(--vermelho-sa);
+    text-align: center;
+    padding-left: 10px;
+    margin: 30px;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: #e2e2e2de;
+}
+
+
+
+
+
+
+
+
+.subcategorias2 {
+    width: 100%;
+    margin-bottom: 50px;
+    transition: 0.3;
+}
+
+.produto-card {
+    background: #fff;
+    border-radius: 16px;
+    overflow: hidden;
+    text-align: center;
+    max-width: 250px;
+    height: 430px;
+    display: flex;
+    flex-direction: column;
+    transition: .3s;
+    margin: 0px;
+}
+
+        .produto-card:hover {
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.12);
+        }
+        .swiper .swiper-slide:nth-child(odd) .valor-produto {
+            color: var(--vermelho-sa);
+            font-weight: 700;
+        }
+
+        .swiper .swiper-slide:nth-child(even) .valor-produto {
+            color: var(--azul-escuro-sa);
+            font-weight: 700;
+        
+        }
+
+.produto-card a {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    text-decoration: none;
+    color: inherit;
+}
+
+.produto-card img {
+    width: 100%;
+    object-fit: cover;
+    display: block;
+    padding: 8px;
+    border-radius: 15px;
+}
+
+.nome-produto {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 10px;
+    font-family: var(--Black);
+    font-size: 1.2em;
+    color: black;
+}
+
+.valor-produto {
+    font-family: var(--Anton);
+    font-size: 1.6em;
+    color: var(--vermelho-sa);
+    
+    margin-bottom: 5px;
+}
+
+.parcelas-produto {
+    min-height: 60px;
+    font-size: 1em;
+    color: rgb(58, 58, 58);
+    padding:  10px;
+    margin-bottom: 5px;
+}
+.valor-acrescimo {
+    font-weight: bold;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Quem Somos */
+.qs {
+    background: white;
+    padding: 20px;
+}
+
+.subqs {
+    display: flex;
+    border-radius: 20px;
+    background: #e2e2e2de;
+}
+
+.qs1 {
+    max-width: 800px;
+    padding: 30px;
+}
+
+.qs1 h2 {
+    font-family: var(--roboto);
+    font-size: 2.5em;
+    color: var(--vermelho-sa);
+    padding: 10px;
+}
+
+.qs1 p {
+    text-align: justify;
+    display: grid;
+    font-size: 1.5em;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.qs1 a {
+    font-family: var(--roboto);
+    font-weight: 600;
+    color: var(--branco);
+    font-size: 1.5em;
+    padding: 15px 5px;
+    border-radius: 6px;
+    background-color: var(--verdeescuro);
+}
+
+.qs2 {
+    display: grid;
+}
+
+.qs2 img {
+    width: 60px;
+    margin: 0px 15px;
+}
+
+.qs2 p {
+    display: grid;
+    justify-content: center;
+    margin: 10px;
+    display: flex;
+    font-size: 1.5em;
+}
+
+/* Footer */
+abbr {
+    text-decoration: none;
+}
+
+footer {
+    padding: 15px;
+    text-align: center;
+    background-image: linear-gradient(to bottom, var(--vermelho-sa), #a10f27);
+    color: white;
+    font-family: var(--roboto);
+    font-size: 0.9rem;
+}
+/* ===== CONTAINER DO SWIPER ===== */
+.minha-vitrine {
+    position: relative;
+    width: 100%;
+    padding: 20px 40px; /* espaço pras setas */
+}
+
+/* ===== CARD ===== */
+
+
+/* ===== IMAGEM ===== */
+.produto-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+/* ===== SETAS BASE ===== */
+.swiper-button-next,
+.swiper-button-prev {
+    width: 45px;
+    height: 45px;
+    background: transparent;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 999;
+
+    transition: 0.3s;
+}
+
+
+
+/* ===== HOVER ===== */
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+    transform: translateY(-50%) scale(1.1);
+    
+}
+
+/* ===== TAMANHO DO ÍCONE (ESSENCIAL) ===== */
+.swiper-button-next::after,
+.swiper-button-prev::after {
+    font-size: 10px;
+    font-weight: bold;
+}
+
+/* ===== POSIÇÃO ===== */
+.swiper-button-prev {
+    left: 5px;
+}
+
+.swiper-button-next {
+    right: 5px;
+}
+
+
+
+
+.search-box {
+    display: flex; 
+    align-items: center;
+    gap: 12px;
+    background: #fff;
+    border: 2px solid #e5e7eb;
+    border-radius: 16px;
+    padding: 14px 18px;
+    max-width: 650px;
+    margin: 0 auto 30px auto;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+    transition: 0.3s ease;
+}
+
+.search-box:focus-within {
+    border-color: #0047BB;
+    box-shadow: 0 8px 25px rgba(0,71,187,0.15);
+}
+
+.search-box i {
+    font-size: 22px;
+    color: #6b7280;
+}
+
+.search-box input {
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: 1.1rem;
+    font-family: var(--roboto);
+    background: transparent;
+    color: #111827;
+}
+
+
+ /* ============================================= 
+   MEDIA QUERIES - RESPONSIVIDADE PROGRESSIVA 
+   ============================================= */
+
+ /* Começa a reduzir a partir de 1500px */
+ @media (max-width: 1500px) {
+    .nomeloja {
+        font-size: 4.5em;
+    }
+    .imglogo {
+        width: 300px;
+    }
+    .contentp {
+        margin-left: 0;
+        
+    }
+    
+   
+    
+    
+    .front {
+        background-position: center center;
+        min-height: 60vh;
+        transition: 0.5s;
+    }
+    .contentp {
+        padding-left: 100px;
+    }
+} 
+
+@media (max-width: 1280px) {
+    .nomeloja {
+        font-size: 3.5em;
+        margin-bottom: 0px;
+    }
+    .imglogo {
+        width: 250px;
+    }
+    .contentp {
+        margin-left: 30px;
+        padding-top: 30px;
+    }
+    .contentp h1 {
+        font-size: 2.2em;
+    }
+    .links a {
+        font-size: 1.4em;
+        padding: 5px 10px;
+        margin: 5px;
+    }
+    .front {
+        min-height: 60vh;
+    }
+}
+
+/* Tablets landscape / notebooks menores */
+@media (max-width: 1024px) {
+    .nomeloja {
+        font-size: 2.8em;
+        text-align: center;
+    }
+    .imglogo {
+        width: 230px;
+    }
+    .contentp {
+        max-width: 1000px;
+        margin: 0 auto;
+        text-align: center;
+    }
+    .contentp {
+        padding-left: 0px;
+    }
+    .contentp h1 {
+        font-size: 2.1em;
+    }
+    .contentp p {
+        font-size: 1.2em;
+    }
+    .linkfrente {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+    .linkfrente a.a1, .linkfrente a#a2 {
+        display: flex;
+        justify-content: center;
+        width: 60%;
+    }
+    .links a {
+        font-size: 1.2em;
+        padding: 8px 15px;
+    }
+    .front {
+        background-position: center;
+    }
+    .subcategorias1 p {
+        font-size: 1.3em;
+    }
+    .nomeloja {
+        font-size: 3em;
+    }
+    .subcategorias2 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+} 
+
+/* Quando não couber mais 4 colunas → cai para 2 */
+ @media (max-width: 960px) {
+    .subcategorias1 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}  
+
+/* Tablets portrait / celulares grandes - ATIVA MENU HAMBÚRGUER */
+ @media (max-width: 768px) { 
+    /* Mostra o botão hambúrguer */
+     .menu-toggle {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
+    .navbar1 {
+        padding: 0px 20px;    
+    }
+
+    .nomeloja-nav {
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        font-family: var(--Black);
+        font-weight: 800;
+        font-size: 1.5em;
+        color: #1a1919;
+        transition: 0.5s;
+        padding: 10px;
+        color: white;
+         
+    }
+    .S, .A, .ELETROO, .MOVEISS {
+        color: white;
+}
+    .navbar {
+        box-shadow: none;
+        justify-content: center; 
+     } 
+    /* Links ficam em coluna e escondidos por padrão */
+    .links {
+        position: absolute;
+        top: 100%;
+        right: -5px;
+        width: 280px;
+        flex-direction: column;
+        align-items: stretch;
+        background: #b90c29;
+        backdrop-filter: blur(15px);
+        border-radius: 8px;
+        padding: 12px;
+        box-shadow: 0 20px 35px rgba(0,0,0,0.25);
+
+        opacity: 0;
+        transform: translateY(-15px);
+        pointer-events: none;
+        transition: all 0.35s ease;
+    }
+    
+    /* Quando ativo, mostra o menu */
+    .links.active {
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto;
+    }
+
+    .links a {
+       width: 100%;
+        text-align: left;
+        font-size: 1rem;
+    }
+
+    .links a::after {
+        display: none;
+    }
+
+    .navbar1 {
+    position: sticky;
+    top: 0px;
+    
+    }
+
+    .nav-imgg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 15px;
+    flex-shrink: 0;
+}
+
+    .nav-imgg img {
+        height: 55px;
+        width: auto;
+        display: block;  
+    }
+
+
+    .navbar {
+        position: relative;
+    }
+
+    .divlogo {
+        display: flex;
+        justify-content: center;
+    }
+
+
+    .links a#lwtp {
+        margin: 10px 20px;
+        width: calc(100% - 40px);
+    }
+
+    
+    .contentp {
+        margin: 0 auto;
+        text-align: center;
+    }
+    .imglogo {
+        width: 200px;
+    }
+    .categorias1 h1, .categorias2 h1 {
+        font-size: 2em;
+        text-align: center;
+    }
+    .categorias1 img, .categorias2 img {
+    max-width: 100%;
+}
+    .nome-produto {
+        font-size: 1.3em !important;
+    }
+    .valor-produto {
+        font-size: 1.7em;
+    }
+    .parcelas-produto {
+        font-size: 1em !important;
+    }
+    .subqs {
+        flex-direction: column;
+    }
+    .subqs .qs1 {
+        text-align: center;
+        width: 100%;
+    }
+    .subqs .qs1 p {
+        font-size: 1.5em;
+    }
+    .subqs .qs2 {
+        width: 100%;
+    }
+
+
+
+    .produto-card {
+    max-width: 250px;
+  }
+
+  
+} 
+
+@media (max-width: 650px) {
+    .imglogo {
+        transition: 0.5s;
+        width: 170px;
+    }
+    .nomeloja {
+        margin-bottom: 20px;
+    }
+    .linkfrente {
+        margin-top: 0px;
+    }
+}
+
+
+@media (max-width: 555px) {
+    .categorias2 {
+        margin: 0px 30px;
+    }
+}
+
+/* Celular pequeno → 1 coluna */
+@media (max-width: 500px) {
+    .subcategorias1 {
+        grid-template-columns: 1fr;
+    }
+} 
+
+/* Celulares pequenos */
+ @media (max-width: 480px) {
+    .categorias2 {
+        margin: 0px 20px;
+    }
+    .nomeloja {
+        font-size: 2.5em;
+    }
+    .contentp h1 {
+        font-size: 1.8em;
+    }
+    .contentp p {
+        font-size: 1.1em;
+    }
+    .linkfrente a.a1, .linkfrente a#a2 {
+        font-size: 1.1em;
+        padding: 10px 15px;
+        width: 70%;
+    }
+    .links a {
+        font-size: 1.1em;
+        padding: 12px 15px;
+    }
+    .links a#lwtp {
+        padding: 12px;
+        border-radius: 5px;
+    }
+    .subcategorias2 .valor {
+        font-size: 1.4em;
+    }
+    .qs .subqs .qs1 a {
+        font-size: 100%;
+        padding: 10px 4px;
+        border-radius: 6px;
+    }
+    .qs .subqs .qs1 p {
+        text-align: justify;
+        font-size: 1.3em;
+    }
+    .subqs .qs1 h2 {
+        font-size: 2.2em;
+    }
+    .subqs .qs2 p {
+        font-size: 1.3em;
+    }
+    .categorias2 h1 {
+        font-size: 1.5em;
+    }
+    footer p {
+        font-size: 0.8em;
+    }
+}  
+
+
+
+.aviso-novidades {
+  position: relative;
+  text-align: center;
+  padding: 18px 30px;         
+  font-family: var(--Black);
+  font-size: 1.3em;
+  color: white;
+  background: linear-gradient(270deg, #d11333, #003087, #0047BB, #d11333);
+  background-size: 600% 600%;
+  animation: gradienteAnimado 8s ease infinite;
+  letter-spacing: 1px;
+  border-radius: 12px;              
+  overflow: hidden;                 
+  z-index: 1;
+  border: 3px solid transparent;    
+  background-clip: padding-box;     
+  background-origin: border-box;    
+}
+
+/* Animação do fundo original (mantida) */
+@keyframes gradienteAnimado {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.aviso-novidades p {
+  margin: 0;
+  position: relative;
+  z-index: 2;                       /* Texto fica acima de tudo */
+}
+
+/* Rotação infinita da fita */
+@keyframes rotateLED {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(10deg); }
+}
+
+/* Opcional: glow extra ao redor (pra reforçar o efeito LED) */
+.aviso-novidades {
+  box-shadow: 
+    0 0 20px rgba(209, 19, 51, 0.2),
+    0 0 20px rgba(0, 71, 187, 0.2),
+    0 0 20px rgba(0, 48, 135, 0.2);
+}
+
+@media screen and (min-width: 1024px) {
+    .subcategorias2:last-of-type {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+    }
+}
+
+
+
+
+
+/* PAGINAÇÃO */
+
+.swiper-pagination {
+    position: relative !important;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+    background: #bdbdbd;
+    opacity: 1;
+    transition: 0.3s;
+}
+
+.swiper-pagination-bullet-active {
+    width: 30px;
+    border-radius: 20px;
+    background: #b90c29;
+}
+    </style>
+</head>
+<body>
+        <header id="header">
+            <div class="divlogo">
+            <img class="imglogo" src="imagens/logo/logoaaa.png" alt="Logo SA Moveis">
+            </div>
+        </header>
+        <div class="navbar1">
+            <div class="nomeloja-nav">
+                    <span class="S">S</span><span class="A">A</span> - <span class="MOVEIS">MÓVEIS</span> & <span class="ELETRO">ELETRO</span><span class="marca">&reg;</span>
+                </div> 
+            <!-- <div class="nav-imgg">
+                <img src="imagens/logo/logoaaa.png" alt="">
+            </div> -->
+        <nav class="navbar">
+                <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <div class="links" id="navLinks">
+                    <a href="#header"><i class="fa fa-home" style="font-size: 30px;"></i></i> INÍCIO</a>
+                    <a href="https://www.instagram.com/s.a_moveiseletro/" target="_blank"><i class="fa fa-instagram" style="font-size: 30px;"></i> MÍDIAS</a>
+                    <a class="aloc" href="pagina-localizacao/localizacao.html"><i class="fa fa-map-marker" style="font-size: 30px;"></i> LOCALIZAÇÃO</a>
+                    <a id="lwtp" href="#" target="_blank"><i class="fa fa-whatsapp"></i> FALE NO WHATSAPP</a>
+                </div>
+            </nav>
+        </div>
+    <main>
+        <section class="front">
+            <div class="contentp">
+                 <div class="nomeloja">
+                    <span id="S">S</span><span id="A">A</span> - <span id="MOVEIS">MÓVEIS</span> & <span id="ELETRO">ELETRO</span><span class="marca">&reg;</span>
+                </div> 
+                <div class="front-p">
+                    <h1>
+                        Móveis e Eletrodomésticos<br>
+                        para sua casa
+                    </h1>
+                    <p>
+                        Qualidade, preço justo e <strong>entrega grátis</strong><br>
+                        para Teresina e Timon.
+                    </p>
+                </div>
+                <div class="linkfrente">
+                    <a id="a2" href="#" target="_blank"><i style="font-size:25px" class="fa">&#xf232;</i> &nbsp;Falar no Whatsapp</a>
+                    <a class="a1" href="#produtosi">Ver Produtos</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="categorias2 " id="produtosi">
+    <h1>CONHEÇA NOSSA VITRINE</h1>
+
+    <div class="search-box">
+        <i class="fa fa-search"></i>
+        <input type="text" id="searchInput" placeholder="Busque por um produto">
+    </div>
+
+    <div class="swiper vitrine-roupeiros">
+        <div class="swiper-wrapper">
+
+            <div class="swiper-slide produto-card" data-name="guarda-roupa solteiro estrela premium">
+     <a href="pagina-produtos/produto2.html">
+                        
+                        <img src="imagens/imgp/produtos2/produtoA.jpeg" alt="Imagem produto">
+                        
+                        <h3 class="nome-produto">
+                            Guarda-roupa Solteiro Estrela Premium
+                        </h3>
+                        
+                        <p class="valor-produto">
+                            R$ 650,00
+                        </p>
+                        
+                        <p class="parcelas-produto">
+                            ou R$ <span class="valor-acrescimo">750,00</span> em 10x de 75,00 no Cartão
+                        </p>
+                    </a>
+    </div>
+
+
+
+            <div class="swiper-slide produto-card">
+    <a href="pagina-produtos/produto6.html">
+        <img src="imagens/imgp/produtos6/produtoB.jpeg" alt="Imagem produto">
+
+        <h3 class="nome-produto">
+            Roupeiro Casal Andorinha
+        </h3>
+
+        <p class="valor-produto">
+            R$ 1.299,99
+        </p>
+
+        <p class="parcelas-produto">
+            ou R$ <span class="valor-acrescimo">1.499,99</span> em 12x de 125,00 no Cartão
+        </p>
+    </a>
+</div>
+
+<div class="swiper-slide produto-card">
+    <a href="pagina-produtos/produto.html">
+        <img src="imagens/imgp/produtos1/produtoA.jpeg" alt="Imagem produto">
+
+        <h3 class="nome-produto">
+            Guarda Roupa Panamá com Espelho
+        </h3>
+
+        <p class="valor-produto">
+            R$ 1.400,00
+        </p>
+
+        <p class="parcelas-produto">
+            ou R$ <span class="valor-acrescimo">1.600,00</span> em 10x de 160,00 no Cartão
+        </p>
+    </a>
+</div>
+
+<div class="swiper-slide produto-card">
+    <a href="pagina-produtos/produto5.html">
+        <img src="imagens/imgp/produtos5/produtoA.jpg" alt="Imagem produto">
+
+        <h3 class="nome-produto">
+            Roupeiro Casal Parma com Espelho
+        </h3>
+
+        <p class="valor-produto">
+            R$ 1.499,99
+        </p>
+
+        <p class="parcelas-produto">
+            ou R$ <span class="valor-acrescimo">1.699,99</span> em 10x de 169,99 no Cartão
+        </p>
+    </a>
+</div>
+
+<div class="swiper-slide produto-card">
+    <a href="pagina-produtos/produto3.html">
+        <img src="imagens/imgp/produtos3/produtoA.jpeg" alt="Imagem produto">
+
+        <h3 class="nome-produto">
+            Guarda Roupa Casal Chicago
+        </h3>
+
+        <p class="valor-produto">
+            R$ 2.599,99
+        </p>
+
+        <p class="parcelas-produto">
+            ou R$ <span class="valor-acrescimo">2.960,00</span> em 10x de 296,00 no Cartão
+        </p>
+    </a>
+</div>
+
+<div class="swiper-slide produto-card">
+    <a href="pagina-produtos/produto3.html">
+        <img src="imagens/imgp/produtos3/produtoA.jpeg" alt="Imagem produto">
+
+        <h3 class="nome-produto">
+            Guarda Roupa Casal Chicago
+        </h3>
+
+        <p class="valor-produto">
+            R$ 2.599,99
+        </p>
+
+        <p class="parcelas-produto">
+            ou R$ <span class="valor-acrescimo">2.960,00</span> em 10x de 296,00 no Cartão
+        </p>
+    </a>
+</div>
+
+        </div>
+
+        <div class="swiper-button-prev prev-roupeiros"></div>
+        <div class="swiper-button-next next-roupeiros"></div>
+    </div>
+</section>
+
+<section class="categorias2">
+
+    <div class="swiper vitrine-sofas">
+        <div class="swiper-wrapper">
+
+            <div class="swiper-slide produto-card">
+        <a href="pagina-produtos/produto7.html">
+        <img src="imagens/imgp/produtos7/produtoA.jpeg" alt="Imagem produto">
+
+        <h3 class="nome-produto">
+            Mesa de Jantar Jade
+        </h3>
+
+        <p class="valor-produto">
+            R$ 1.499,99
+        </p>
+
+        <p class="parcelas-produto">
+            ou R$ <span class="valor-acrescimo">1.740,00</span> em 12x de 145,00 no Cartão
+        </p>
+    </a>
+</div>
+<div class="swiper-slide produto-card">
+    <a href="pagina-produtos/produto7.html">
+        <img src="imagens/imgp/produtos7/produtoA.jpeg" alt="Imagem produto">
+
+        <h3 class="nome-produto">
+            Mesa de Jantar Jade
+        </h3>
+
+        <p class="valor-produto">
+            R$ 1.499,99
+        </p>
+
+        <p class="parcelas-produto">
+            ou R$ <span class="valor-acrescimo">1.740,00</span> em 12x de 145,00 no Cartão
+        </p>
+    </a>
+</div>
+<div class="swiper-slide produto-card">
+    <a href="pagina-produtos/produto7.html">
+        <img src="imagens/imgp/produtos7/produtoA.jpeg" alt="Imagem produto">
+
+        <h3 class="nome-produto">
+            Mesa de Jantar Jade
+        </h3>
+
+        <p class="valor-produto">
+            R$ 1.499,99
+        </p>
+
+        <p class="parcelas-produto">
+            ou R$ <span class="valor-acrescimo">1.740,00</span> em 12x de 145,00 no Cartão
+        </p>
+    </a>
+</div>
+<div class="swiper-slide produto-card">
+    <a href="pagina-produtos/produto7.html">
+        <img src="imagens/imgp/produtos7/produtoA.jpeg" alt="Imagem produto">
+
+        <h3 class="nome-produto">
+            Mesa de Jantar Jade
+        </h3>
+
+        <p class="valor-produto">
+            R$ 1.499,99
+        </p>
+
+        <p class="parcelas-produto">
+            ou R$ <span class="valor-acrescimo">1.740,00</span> em 12x de 145,00 no Cartão
+        </p>
+    </a>
+</div>
+<div class="swiper-slide produto-card">
+    <a href="pagina-produtos/produto7.html">
+        <img src="imagens/imgp/produtos7/produtoA.jpeg" alt="Imagem produto">
+
+        <h3 class="nome-produto">
+            Mesa de Jantar Jade
+        </h3>
+
+        <p class="valor-produto">
+            R$ 1.499,99
+        </p>
+
+        <p class="parcelas-produto">
+            ou R$ <span class="valor-acrescimo">1.740,00</span> em 12x de 145,00 no Cartão
+        </p>
+    </a>
+</div>
+<div class="swiper-slide produto-card">
+    <a href="pagina-produtos/produto7.html">
+        <img src="imagens/imgp/produtos7/produtoA.jpeg" alt="Imagem produto">
+
+        <h3 class="nome-produto">
+            Mesa de Jantar Jade
+        </h3>
+
+        <p class="valor-produto">
+            R$ 1.499,99
+        </p>
+
+        <p class="parcelas-produto">
+            ou R$ <span class="valor-acrescimo">1.740,00</span> em 12x de 145,00 no Cartão
+        </p>
+    </a>
+</div>
+
+        </div>
+
+        <div class="swiper-button-prev prev-sofas"></div>
+        <div class="swiper-button-next next-sofas"></div>
+    </div>
+</section>
+<!--
+<div class="swiper-slide produto-card">
+    <a href="pagina-produtos/produto7.html">
+        <img src="imagens/imgp/produtos7/produtoA.jpeg" alt="Imagem produto">
+
+        <h3 class="nome-produto">
+            Mesa de Jantar Jade
+        </h3>
+
+        <p class="valor-produto">
+            R$ 1.499,99
+        </p>
+
+        <p class="parcelas-produto">
+            ou R$ <span class="valor-acrescimo">1.740,00</span> em 12x de 145,00 no Cartão
+        </p>
+    </a>
+</div>
+
+<div class="swiper-slide produto-card">
+    <a href="pagina-produtos/produto8.html">
+        <img src="imagens/imgp/produtos8/produtoA.jpeg" alt="Imagem produto">
+
+        <h3 class="nome-produto">
+            Box Super King Size Vigor
+        </h3>
+
+        <p class="valor-produto">
+            R$ 2.000,00
+        </p>
+
+        <p class="parcelas-produto">
+            ou R$ <span class="valor-acrescimo">2.310,00</span> em 12x de 192,50 no Cartão
+        </p>
+    </a>
+</div>
+
+<div class="swiper-slide produto-card">
+    <a href="pagina-produtos/produto9.html">
+        <img src="imagens/imgp/produtos9/produtoA.jpeg" alt="Imagem produto">
+
+        <h3 class="nome-produto">
+            Sofá Retrátil Reclinável Ibiza
+        </h3>
+
+        <p class="valor-produto">
+            R$ 1.599,99
+        </p>
+
+        <p class="parcelas-produto">
+            ou R$ <span class="valor-acrescimo">1.845,00</span> em 12x de 153,75 no Cartão
+        </p>
+    </a>
+</div>
+
+<div class="swiper-slide produto-card">
+    <a href="pagina-produtos/produto10.html">
+        <img src="imagens/imgp/produtos10/produtoA.jpg" alt="Imagem produto">
+
+        <h3 class="nome-produto">
+            Sofá Imola Onix
+        </h3>
+
+        <p class="valor-produto">
+            R$ 1.499,99
+        </p>
+
+        <p class="parcelas-produto">
+            ou R$ <span class="valor-acrescimo">1.740,00</span> em 12x de 145,00 no Cartão
+        </p>
+    </a>
+</div>
+
+<div class="swiper-slide produto-card">
+    <a href="pagina-produtos/produto11.html">
+        <img src="imagens/imgp/produtos11/produtoA.jpeg" alt="Imagem produto">
+
+        <h3 class="nome-produto">
+            Sofá Retrátil Reclinável Onix
+        </h3>
+
+        <p class="valor-produto">
+            R$ 1.599,00
+        </p>
+
+        <p class="parcelas-produto">
+            ou R$ <span class="valor-acrescimo">1.835,00</span> em 12x de 153,75 no Cartão
+        </p>
+    </a>
+</div>
+
+
+    <div class="swiper-slide produto-card">Produto 3</div>
+    <div class="swiper-slide produto-card">Produto 4</div>
+    <div class="swiper-slide produto-card">Produto 2</div>
+    <div class="swiper-slide produto-card">Produto 3</div>
+    <div class="swiper-slide produto-card">Produto 4</div>
+    <div class="swiper-slide produto-card">Produto 2</div>
+    <div class="swiper-slide produto-card">Produto 3</div>
+    <div class="swiper-slide produto-card">Produto 4</div> -->
+
+  </div>
+
+  <!-- setas -->
+  <div class="swiper-button-prev custom-prev"></div>
+  <div class="swiper-button-next custom-next"></div>
+</div>
+
+ 
+        </section> 
+            <section class="aviso-novidades">
+                <p>🚀 Novos produtos e promoções chegando! Nosso catálogo está em expansão.</p>
+            </section>
+
+        <section class="qs">
+            <div class="subqs">
+                <div class="qs1">
+                    <h2>
+                        Quem Somos
+                    </h2>
+                    <p>
+                        A SA Móveis e Eletro trabalha com produtos de qualidade, oferecendo entrega e montagem gratuitas, além de um atendimento proximo e confiável.
+                    </p>
+                    <a href="" id="a3"><i style="font-size:24px" class="fa">&#xf232;</i> Comprar no Whatsapp</a>
+                </div>
+                <div class="qs2">
+                    <p>
+                        <img class="img1" src="imagens/icones/container (3).png" alt="">Entrega grátis em <br>Teresina e Timon
+                    </p>
+                    <p>
+                        <img class="img2" src="imagens/icones/repair-tools.png" alt="">Montagem Grátis <br>dos Móveis
+                    </p>
+                    <p>
+                        <img class="img3" src="imagens/icones/handshake (1).png" alt="">Atendimento Agil<br>e confiável
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <abbr title="">
+            <p>&copy; 2026 SA - MÓVEIS E ELETRO - TODOS OS DIREITOS RESERVADOS</p>
+        </abbr>
+    </footer>
+    <script>
+        // Menu hambúrguer toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
+
+        menuToggle.addEventListener('click', function() {
+            navLinks.classList.toggle('active');
+            menuToggle.classList.toggle('active');
+        });
+
+        // Fecha o menu ao clicar em um link (em mobile)
+        const links = document.querySelectorAll('.links a');
+        links.forEach(link => {
+            link.addEventListener('click', function() {
+                if (window.innerWidth <= 768) {
+                    navLinks.classList.remove('active');
+                    menuToggle.classList.remove('active');
+                }
+            });
+        });
+
+
+
+        document.getElementById('a2').addEventListener('click', function (e) {
+            e.preventDefault();
+            const linkProduto = window.location.href;
+            const mensagem = `👋 Olá! Acessei a página inicial do site da *S.A Móveis* e me interessei em conhecer melhor os produtos e condições de compra.🤩 
+            
+🔗 https://sa-moveis.github.io`.trim();
+            const url = `https://api.whatsapp.com/send?phone=5586981373829&text=${encodeURIComponent(mensagem)}`;
+            window.open(url, '_blank');
+        });
+
+
+
+        document.getElementById('a3').addEventListener('click', function (e) {
+            e.preventDefault();
+            const linkProduto = window.location.href;
+            const mensagem = `👋 Olá! Acessei a página inicial do *Site da S.A Móveis* e me interessei em conhecer melhor os produtos e condições de compra.🤩 
+            
+🔗 https://sa-moveis.github.io`.trim();
+            const url = `https://api.whatsapp.com/send?phone=5586981373829&text=${encodeURIComponent(mensagem)}`;
+            window.open(url, '_blank');
+        });
+
+
+
+        document.getElementById('lwtp').addEventListener('click', function (e) {
+            e.preventDefault();
+            const linkProduto = window.location.href;
+            const mensagem = `👋 Olá! Acessei a página inicial do *Site da S.A Móveis* e me interessei em conhecer melhor os produtos e condições de compra.🤩 
+            
+🔗 https://sa-moveis.github.io`.trim();
+            const url = `https://api.whatsapp.com/send?phone=5586981373829&text=${encodeURIComponent(mensagem)}`;
+            window.open(url, '_blank');
+        });
+
+
+
+        function scrollSuave(target, duration = 1000) {
+            const targetPosition = target.getBoundingClientRect().top;
+            const startPosition = window.pageYOffset;
+            let startTime = null;
+
+            function animation(currentTime) {
+                if (startTime === null) startTime = currentTime;
+                const timeElapsed = currentTime - startTime;
+                const ease = easeInOutCubic(timeElapsed, startPosition, targetPosition, duration);
+                window.scrollTo(0, ease);
+                if (timeElapsed < duration) requestAnimationFrame(animation);
+            }
+
+            function easeInOutCubic(t, b, c, d) {
+                t /= d / 2;
+                if (t < 1) return c / 2 * t * t * t + b;
+                t -= 2;
+                return c / 2 * (t * t * t + 2) + b;
+            }
+
+            requestAnimationFrame(animation);
+        }
+
+        document.querySelectorAll('a[href^="#"]').forEach(link => {
+            link.addEventListener('click', function (e) {
+                const alvo = document.querySelector(this.getAttribute('href'));
+                if (!alvo) return;
+                e.preventDefault();
+                scrollSuave(alvo, 1100);
+            });
+        });
+
+
+
+const vitrines = document.querySelectorAll('.swiper');
+
+vitrines.forEach((vitrine) => {
+
+    const next = vitrine.querySelector('.swiper-button-next');
+    const prev = vitrine.querySelector('.swiper-button-prev');
+
+    const pagination = document.createElement('div');
+    pagination.classList.add('swiper-pagination');
+    vitrine.appendChild(pagination);
+
+    new Swiper(vitrine, {
+        loop: true,
+        speed: 500,
+        spaceBetween: 12,
+
+        slidesPerView: 2,
+        slidesPerGroup: 2,
+
+        navigation: {
+            nextEl: next,
+            prevEl: prev,
+        },
+
+        pagination: {
+            el: pagination,
+            clickable: true,
+        },
+
+        breakpoints: {
+            0: {
+                slidesPerView: 2,
+                slidesPerGroup: 2,
+            },
+
+            768: {
+                slidesPerView: 2,
+                slidesPerGroup: 2,
+            },
+
+            1100: {
+                slidesPerView: 4,
+                slidesPerGroup: 1,
+            }
+        }
+    });
+});
+
+const searchInput = document.getElementById("searchInput");
+const slides = document.querySelectorAll(".produto-card");
+
+searchInput.addEventListener("input", function () {
+    const termo = this.value.toLowerCase().trim();
+
+    slides.forEach(slide => {
+        const titulo = slide.querySelector(".nome-produto");
+
+        if (!titulo) return;
+
+        const textoProduto = titulo.textContent.toLowerCase();
+
+        if (textoProduto.includes(termo) || termo === "") {
+            slide.style.display = "";
+        } else {
+            slide.style.display = "none";
+        }
+    });
+
+    swiper.update();
+});
+    </script>
+</body>
+</html>
