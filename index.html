@@ -1033,7 +1033,7 @@ footer {
         margin: 0px 20px;
     }
     .nomeloja {
-        font-size: 3em;
+        font-size: 2.8em;
     }
     .contentp h1 {
         font-size: 1.6em;
@@ -1574,30 +1574,7 @@ footer {
                 <p>🚀 Novos produtos e promoções chegando! Nosso catálogo está em expansão.</p>
             </section>
 
-        <section class="qs">
-            <div class="subqs">
-                <div class="qs1">
-                    <h2>
-                        Quem Somos
-                    </h2>
-                    <p>
-                        A SA Móveis e Eletro trabalha com produtos de qualidade, oferecendo entrega e montagem gratuitas, além de um atendimento proximo e confiável.
-                    </p>
-                    <a href="" id="a3"><i style="font-size:24px" class="fa">&#xf232;</i> Comprar no Whatsapp</a>
-                </div>
-                <div class="qs2">
-                    <p>
-                        <img class="img1" src="imagens/icones/container (3).png" alt="">Entrega grátis em <br>Teresina e Timon
-                    </p>
-                    <p>
-                        <img class="img2" src="imagens/icones/repair-tools.png" alt="">Montagem Grátis <br>dos Móveis
-                    </p>
-                    <p>
-                        <img class="img3" src="imagens/icones/handshake (1).png" alt="">Atendimento Agil<br>e confiável
-                    </p>
-                </div>
-            </div>
-        </section>
+        
     </main>
 
     <footer>
@@ -1632,18 +1609,6 @@ footer {
             e.preventDefault();
             const linkProduto = window.location.href;
             const mensagem = `👋 Olá! Acessei a página inicial do site da *S.A Móveis* e me interessei em conhecer melhor os produtos e condições de compra.🤩 
-            
-🔗 https://sa-moveis.github.io`.trim();
-            const url = `https://api.whatsapp.com/send?phone=5586981373829&text=${encodeURIComponent(mensagem)}`;
-            window.open(url, '_blank');
-        });
-
-
-
-        document.getElementById('a3').addEventListener('click', function (e) {
-            e.preventDefault();
-            const linkProduto = window.location.href;
-            const mensagem = `👋 Olá! Acessei a página inicial do *Site da S.A Móveis* e me interessei em conhecer melhor os produtos e condições de compra.🤩 
             
 🔗 https://sa-moveis.github.io`.trim();
             const url = `https://api.whatsapp.com/send?phone=5586981373829&text=${encodeURIComponent(mensagem)}`;
