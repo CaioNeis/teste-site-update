@@ -668,6 +668,7 @@ header {
     .localizacao, .localizacao-container {
         padding: 10px;
     }
+    
 }
 
 
@@ -1072,7 +1073,9 @@ footer {
     .linkfrente {
         margin-top: 0px;
     }
-}
+    .localizacao-container h1 {
+        font-size: 2em;
+    }
 
 
 @media (max-width: 555px) {
@@ -1809,13 +1812,15 @@ vitrines.forEach((vitrine) => {
 
         breakpoints: {
     0: {
-        slidesPerView: 1,
+        slidesPerView: 2,
         slidesPerGroup: 1,
+        spaceBetween: 10,
     },
 
     500: {
         slidesPerView: 2,
         slidesPerGroup: 1,
+        spaceBetween: 12,
     },
 
     900: {
@@ -1828,7 +1833,6 @@ vitrines.forEach((vitrine) => {
         slidesPerGroup: 1,
         spaceBetween: 20,
     }
-
 }
     });
 
