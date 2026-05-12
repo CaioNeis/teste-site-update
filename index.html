@@ -1077,7 +1077,7 @@ footer {
         font-size: 2em;
     }
 
-
+}
 @media (max-width: 555px) {
     .categorias2 {
         margin: 0px 30px;
@@ -1213,26 +1213,33 @@ footer {
 
 /* PAGINAÇÃO */
 
-.swiper-pagination {
+.swiper .swiper-pagination {
     position: relative !important;
-    margin-top: 20px;
-    text-align: center;
+    margin-top: 25px !important;
+    text-align: center !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 8px !important;
 }
 
-.swiper-pagination-bullet {
-    width: 10px;
-    height: 10px;
-    background: #bdbdbd;
-    opacity: 1;
-    transition: 0.3s;
+.swiper .swiper-pagination .swiper-pagination-bullet {
+    width: 10px !important;
+    height: 10px !important;
+    background: #c7c7c7 !important;
+    opacity: 1 !important;
+    border-radius: 50% !important;
+    transition: all 0.35s ease !important;
 }
 
-.swiper-pagination-bullet-active {
-    width: 30px;
-    border-radius: 20px;
-    background: #b90c29;
+.swiper .swiper-pagination .swiper-pagination-bullet-active {
+    width: 32px !important;
+    height: 10px !important;
+    border-radius: 30px !important;
+    background-color: #b90c29 !important; 
 }
     </style>
+
 </head>
 <body>
         <header id="header">
