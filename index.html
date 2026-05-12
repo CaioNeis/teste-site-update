@@ -1455,11 +1455,14 @@ footer {
                 scrollSuave(alvo, 1100);
             });
         });
-
 async function carregarProdutos() {
     
-    const resposta = await fetch("produtos.json");
-    const produtos = await resposta.json();
+    let produtos = JSON.parse(localStorage.getItem("produtos"));
+
+    if (!produtos || produtos.length === 0) {
+        const resposta = await fetch("produtos.json");
+        produtos = await resposta.json();
+    }
 
     const lista = document.getElementById("listaProdutos");
 

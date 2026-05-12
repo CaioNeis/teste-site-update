@@ -228,6 +228,66 @@
     </style>
 </head>
 <body>
+    <script> //Para curiosos nao mexer
+
+    const senhaCorreta = "1234";
+
+    const senhaDigitada = prompt("Digite a senha do painel administrativo:");
+
+    if (senhaDigitada !== senhaCorreta) {
+
+        document.body.innerHTML = `
+            <div style="
+                height:100vh;
+                display:flex;
+                justify-content:center;
+                align-items:center;
+                flex-direction:column;
+                background:#f4f5f7;
+                font-family:Arial;
+                text-align:center;
+                padding:20px;
+            ">
+
+                <h1 style="
+                    color:#b90c29;
+                    font-size:3rem;
+                    margin-bottom:10px;
+                ">
+                    Acesso negado
+                </h1>
+
+                <p style="
+                    color:#555;
+                    font-size:1.2rem;
+                    margin-bottom:25px;
+                ">
+                    Senha incorreta.
+                </p>
+
+                <button onclick="window.location.reload()" style="
+                    background:#0047BB;
+                    color:white;
+                    border:none;
+                    padding:14px 24px;
+                    border-radius:12px;
+                    font-size:1rem;
+                    font-weight:bold;
+                    cursor:pointer;
+                    transition:0.3s;
+                ">
+                    Tentar novamente
+                </button>
+
+            </div>
+        `;
+
+        window.stop();
+
+        throw new Error("Acesso negado");
+    }
+
+</script>
 
     <div class="container">
 
@@ -362,12 +422,33 @@
         };
 
         if (produtoEditando === null) {
-            produtos.push(produto);
-        } else {
-            produtos[produtoEditando] = produto;
-            produtoEditando = null;
-            botaoSubmit.textContent = "Adicionar produto";
-        }
+
+    const confirmarAdicao = confirm(
+        `Deseja realmente adicionar o produto "${produto.nome}"?`
+    );
+
+    if (!confirmarAdicao) {
+        return;
+    }
+
+    produtos.push(produto);
+
+} else {
+
+    const confirmarEdicao = confirm(
+        `Deseja realmente salvar as alterações do produto "${produto.nome}"?`
+    );
+
+    if (!confirmarEdicao) {
+        return;
+    }
+
+    produtos[produtoEditando] = produto;
+
+    produtoEditando = null;
+
+    botaoSubmit.textContent = "Adicionar produto";
+}
 
         localStorage.setItem("produtos", JSON.stringify(produtos));
 
@@ -442,10 +523,20 @@
     // REMOVER PRODUTO
     // ===============================
     function removerProduto(index) {
-        produtos.splice(index, 1);
-        localStorage.setItem("produtos", JSON.stringify(produtos));
-        atualizarTela();
+    const produto = produtos[index];
+
+    const confirmar = confirm(
+        `Tem certeza que deseja remover o produto "${produto.nome}"?\n\nEssa ação não pode ser desfeita.`
+    );
+
+    if (!confirmar) {
+        return;
     }
+
+    produtos.splice(index, 1);
+    localStorage.setItem("produtos", JSON.stringify(produtos));
+    atualizarTela();
+}
 
     // ===============================
     // BAIXAR JSON
