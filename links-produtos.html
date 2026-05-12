@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Links dos Produtos - SA Móveis</title>
+</head>
+<body>
+
+    <h1>Links dos Produtos</h1>
+
+    <input type="text" id="pesquisa" placeholder="Buscar produto...">
+
+    <div id="listaProdutos"></div>
+
+    <script>
+        async function carregarProdutos() {
+            const resposta = await fetch("produtos.json");
+            const produtos = await resposta.json();
+
+            const lista = document.getElementById("listaProdutos");
+            const pesquisa = document.getElementById("pesquisa");
+
+            function mostrarProdutos() {
+                lista.innerHTML = "";
+
+                const termo = pesquisa.value.toLowerCase().trim();
+
+                produtos.forEach(produto => {
+                    if (!produto.nome.toLowerCase().includes(termo)) return;
+
+                    const linkCompleto = new URL(produto.link, window.location.origin).href;
+
+                    lista.innerHTML += `
+                        <div style="border:1px solid #ccc; padding:15px; margin:15px 0;">
+                            <h2>${produto.nome}</h2>
+                            <p>${produto.preco}</p>
+                            <p>${linkCompleto}</p>
+
+                            <button onclick="copiarLink('${linkCompleto}')">
+                                Copiar link
+                            </button>
+                        </div>
+                    `;
+                });
+            }
+
+            pesquisa.addEventListener("input", mostrarProdutos);
+            mostrarProdutos();
+        }
+
+        function copiarLink(link) {
+            navigator.clipboard.writeText(link);
+            alert("Link copiado!");
+        }
+
+        carregarProdutos();
+    </script>
+
+</body>
+</html>

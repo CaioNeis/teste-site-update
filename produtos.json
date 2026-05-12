@@ -1,0 +1,47 @@
+[
+    {
+        "nome": "teste",
+        "preco": "R$ 1.111,11",
+        "precoCartao": "R$ 3.000,00",
+        "parcelas": 12,
+        "valorParcela": "R$ 250,00",
+        "imagem": "https://caioneis.github.io/teste-site-update/",
+        "link": "https://caioneis.github.io/teste-site-update/"
+    },
+    {
+        "nome": "Produto",
+        "preco": "R$ 1.000,00",
+        "precoCartao": "R$ 3.000,00",
+        "parcelas": 12,
+        "valorParcela": "R$ 250,00",
+        "imagem": "21",
+        "link": "12"
+    },
+    {
+        "nome": "panama",
+        "preco": "R$ 232,32",
+        "precoCartao": "R$ 12,31",
+        "parcelas": 12,
+        "valorParcela": "R$ 1,03",
+        "imagem": "12",
+        "link": "12313"
+    },
+    {
+        "nome": "cama king",
+        "preco": "R$ 1.000,00",
+        "precoCartao": "R$ 3.000,00",
+        "parcelas": 11,
+        "valorParcela": "R$ 272,73",
+        "imagem": "1123",
+        "link": "12313"
+    },
+    {
+        "nome": "12112121212",
+        "preco": "R$ 1.000,00",
+        "precoCartao": "R$ 2.000,00",
+        "parcelas": 12,
+        "valorParcela": "R$ 166,67",
+        "imagem": "12",
+        "link": "12"
+    }
+]
