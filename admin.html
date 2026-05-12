@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin - SA Móveis</title>
+</head>
+<body>
+
+    <h1>Painel de Produtos</h1>
+
+    <form id="formProduto">
+        <input type="text" id="nome" placeholder="Nome do produto" required>
+        <input type="text" id="preco" placeholder="Preço à vista" required>
+        <input type="text" id="precoCartao" placeholder="Preço no cartão" required>
+        <input type="text" id="parcelas" placeholder="Parcelas" required>
+        <input type="text" id="imagem" placeholder="Caminho da imagem" required>
+        <input type="text" id="link" placeholder="Link da página do produto" required>
+
+        <button type="submit">Adicionar produto</button>
+    </form>
+
+    <h2>Produtos cadastrados</h2>
+    <div id="listaProdutosAdmin"></div>
+    <button id="baixarJson">Baixar produtos.json</button>
+    <h2>JSON gerado</h2>
+    <textarea id="jsonGerado" style="width:100%; height:250px;"></textarea>
+
+    <script>
+    let produtos = JSON.parse(localStorage.getItem("produtos")) || [];
+
+    const form = document.getElementById("formProduto");
+    const lista = document.getElementById("listaProdutosAdmin");
+    const jsonGerado = document.getElementById("jsonGerado");
+    const baixarJson = document.getElementById("baixarJson");
+
+    form.addEventListener("submit", function(e) {
+        e.preventDefault();
+
+        const produto = {
+            nome: document.getElementById("nome").value,
+            preco: document.getElementById("preco").value,
+            precoCartao: document.getElementById("precoCartao").value,
+            parcelas: document.getElementById("parcelas").value,
+            imagem: document.getElementById("imagem").value,
+            link: document.getElementById("link").value
+        };
+
+        produtos.push(produto);
+
+        localStorage.setItem("produtos", JSON.stringify(produtos));
+
+        form.reset();
+        atualizarTela();
+    });
+
+    function atualizarTela() {
+        lista.innerHTML = "";
+
+        produtos.forEach((produto, index) => {
+            lista.innerHTML += `
+                <div style="border:1px solid #ccc; padding:10px; margin:10px 0;">
+                    <strong>${produto.nome}</strong><br>
+                    ${produto.preco}<br>
+                    <button onclick="removerProduto(${index})">Remover</button>
+                </div>
+            `;
+        });
+
+        jsonGerado.value = JSON.stringify(produtos, null, 4);
+    }
+
+    function removerProduto(index) {
+        produtos.splice(index, 1);
+        localStorage.setItem("produtos", JSON.stringify(produtos));
+        atualizarTela();
+    }
+
+    baixarJson.addEventListener("click", function () {
+        const conteudo = JSON.stringify(produtos, null, 4);
+
+        const blob = new Blob([conteudo], {
+            type: "application/json"
+        });
+
+        const link = document.createElement("a");
+        link.href = URL.createObjectURL(blob);
+        link.download = "produtos.json";
+        link.click();
+    });
+
+    atualizarTela();
+</script>
+</body>
+</html>

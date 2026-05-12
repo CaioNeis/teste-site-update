@@ -42,7 +42,7 @@
         "addressRegion": "PI",
         "addressCountry": "BR"
         },
-        "areaServed": 
+        "areaServed": [ 
         "Teresina",
         "Timon"
         ]
@@ -62,7 +62,6 @@
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Black&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
 
 :root {
@@ -1262,7 +1261,7 @@ footer {
                     <span></span>
                 </button>
                 <div class="links" id="navLinks">
-                    <a href="#header"><i class="fa fa-home" style="font-size: 30px;"></i></i> INÍCIO</a>
+                    <a href="#header"><i class="fa fa-home" style="font-size: 30px;"></i> INÍCIO</a>
                     <a href="https://www.instagram.com/s.a_moveiseletro/" target="_blank"><i class="fa fa-instagram" style="font-size: 30px;"></i> MÍDIAS</a>
                     <a class="aloc" href="#localizacao"><i class="fa fa-map-marker" style="font-size: 30px;"></i> LOCALIZAÇÃO</a>
                     <a id="lwtp" href="#" target="_blank"><i class="fa fa-whatsapp"></i> FALE NO WHATSAPP</a>
@@ -1300,349 +1299,15 @@ footer {
         <input type="text" id="searchInput" placeholder="Busque por um produto">
     </div>
 
+
     <div class="swiper vitrine-roupeiros">
-        <div class="swiper-wrapper">
+    <div class="swiper-wrapper" id="listaProdutos"></div>
 
-            <div class="swiper-slide produto-card" data-name="guarda-roupa solteiro estrela premium">
-     <a href="pagina-produtos/produto2.html">
-                        
-                        <img src="imgens/produtoA.jpeg" alt="Imagem produto">
-                        
-                        <h3 class="nome-produto">
-                            Guarda-roupa Solteiro Estrela Premium
-                        </h3>
-                        
-                        <p class="valor-produto">
-                            R$ 650,00
-                        </p>
-                        
-                        <p class="parcelas-produto">
-                            ou R$ <span class="valor-acrescimo">750,00</span> em 10x de 75,00 no Cartão
-                        </p>
-                    </a>
-    </div>
-
-
-
-            <div class="swiper-slide produto-card">
-    <a href="pagina-produtos/produto6.html">
-        <img src="imagens/imgp/produtos6/produtoB.jpeg" alt="Imagem produto">
-
-        <h3 class="nome-produto">
-            Roupeiro Casal Andorinha
-        </h3>
-
-        <p class="valor-produto">
-            R$ 1.299,99
-        </p>
-
-        <p class="parcelas-produto">
-            ou R$ <span class="valor-acrescimo">1.499,99</span> em 12x de 125,00 no Cartão
-        </p>
-    </a>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
 </div>
-
-<div class="swiper-slide produto-card">
-    <a href="pagina-produtos/produto.html">
-        <img src="imagens/imgp/produtos1/produtoA.jpeg" alt="Imagem produto">
-
-        <h3 class="nome-produto">
-            Guarda Roupa Panamá com Espelho
-        </h3>
-
-        <p class="valor-produto">
-            R$ 1.400,00
-        </p>
-
-        <p class="parcelas-produto">
-            ou R$ <span class="valor-acrescimo">1.600,00</span> em 10x de 160,00 no Cartão
-        </p>
-    </a>
-</div>
-
-<div class="swiper-slide produto-card">
-    <a href="pagina-produtos/produto5.html">
-        <img src="imagens/imgp/produtos5/produtoA.jpg" alt="Imagem produto">
-
-        <h3 class="nome-produto">
-            Roupeiro Casal Parma com Espelho
-        </h3>
-
-        <p class="valor-produto">
-            R$ 1.499,99
-        </p>
-
-        <p class="parcelas-produto">
-            ou R$ <span class="valor-acrescimo">1.699,99</span> em 10x de 169,99 no Cartão
-        </p>
-    </a>
-</div>
-
-<div class="swiper-slide produto-card">
-    <a href="pagina-produtos/produto3.html">
-        <img src="imagens/imgp/produtos3/produtoA.jpeg" alt="Imagem produto">
-
-        <h3 class="nome-produto">
-            Guarda Roupa Casal Chicago
-        </h3>
-
-        <p class="valor-produto">
-            R$ 2.599,99
-        </p>
-
-        <p class="parcelas-produto">
-            ou R$ <span class="valor-acrescimo">2.960,00</span> em 10x de 296,00 no Cartão
-        </p>
-    </a>
-</div>
-
-<div class="swiper-slide produto-card">
-    <a href="pagina-produtos/produto3.html">
-        <img src="imagens/imgp/produtos3/produtoA.jpeg" alt="Imagem produto">
-
-        <h3 class="nome-produto">
-            Guarda Roupa Casal Chicago
-        </h3>
-
-        <p class="valor-produto">
-            R$ 2.599,99
-        </p>
-
-        <p class="parcelas-produto">
-            ou R$ <span class="valor-acrescimo">2.960,00</span> em 10x de 296,00 no Cartão
-        </p>
-    </a>
-</div>
-
-        </div>
-
-        <div class="swiper-button-prev prev-roupeiros"></div>
-        <div class="swiper-button-next next-roupeiros"></div>
-    </div>
 </section>
-
-<section class="categorias2">
-
-    <div class="swiper vitrine-sofas">
-        <div class="swiper-wrapper">
-
-            <div class="swiper-slide produto-card">
-        <a href="pagina-produtos/produto7.html">
-        <img src="imagens/imgp/produtos7/produtoA.jpeg" alt="Imagem produto">
-
-        <h3 class="nome-produto">
-            Mesa de Jantar Jade
-        </h3>
-
-        <p class="valor-produto">
-            R$ 1.499,99
-        </p>
-
-        <p class="parcelas-produto">
-            ou R$ <span class="valor-acrescimo">1.740,00</span> em 12x de 145,00 no Cartão
-        </p>
-    </a>
-</div>
-<div class="swiper-slide produto-card">
-    <a href="pagina-produtos/produto7.html">
-        <img src="imagens/imgp/produtos7/produtoA.jpeg" alt="Imagem produto">
-
-        <h3 class="nome-produto">
-            Mesa de Jantar Jade
-        </h3>
-
-        <p class="valor-produto">
-            R$ 1.499,99
-        </p>
-
-        <p class="parcelas-produto">
-            ou R$ <span class="valor-acrescimo">1.740,00</span> em 12x de 145,00 no Cartão
-        </p>
-    </a>
-</div>
-<div class="swiper-slide produto-card">
-    <a href="pagina-produtos/produto7.html">
-        <img src="imagens/imgp/produtos7/produtoA.jpeg" alt="Imagem produto">
-
-        <h3 class="nome-produto">
-            Mesa de Jantar Jade
-        </h3>
-
-        <p class="valor-produto">
-            R$ 1.499,99
-        </p>
-
-        <p class="parcelas-produto">
-            ou R$ <span class="valor-acrescimo">1.740,00</span> em 12x de 145,00 no Cartão
-        </p>
-    </a>
-</div>
-<div class="swiper-slide produto-card">
-    <a href="pagina-produtos/produto7.html">
-        <img src="imagens/imgp/produtos7/produtoA.jpeg" alt="Imagem produto">
-
-        <h3 class="nome-produto">
-            Mesa de Jantar Jade
-        </h3>
-
-        <p class="valor-produto">
-            R$ 1.499,99
-        </p>
-
-        <p class="parcelas-produto">
-            ou R$ <span class="valor-acrescimo">1.740,00</span> em 12x de 145,00 no Cartão
-        </p>
-    </a>
-</div>
-<div class="swiper-slide produto-card">
-    <a href="pagina-produtos/produto7.html">
-        <img src="imagens/imgp/produtos7/produtoA.jpeg" alt="Imagem produto">
-
-        <h3 class="nome-produto">
-            Mesa de Jantar Jade
-        </h3>
-
-        <p class="valor-produto">
-            R$ 1.499,99
-        </p>
-
-        <p class="parcelas-produto">
-            ou R$ <span class="valor-acrescimo">1.740,00</span> em 12x de 145,00 no Cartão
-        </p>
-    </a>
-</div>
-<div class="swiper-slide produto-card">
-    <a href="pagina-produtos/produto7.html">
-        <img src="imagens/imgp/produtos7/produtoA.jpeg" alt="Imagem produto">
-
-        <h3 class="nome-produto">
-            Mesa de Jantar Jade
-        </h3>
-
-        <p class="valor-produto">
-            R$ 1.499,99
-        </p>
-
-        <p class="parcelas-produto">
-            ou R$ <span class="valor-acrescimo">1.740,00</span> em 12x de 145,00 no Cartão
-        </p>
-    </a>
-</div>
-
-        </div>
-
-        <div class="swiper-button-prev prev-sofas"></div>
-        <div class="swiper-button-next next-sofas"></div>
-    </div>
-</section>
-<!--
-<div class="swiper-slide produto-card">
-    <a href="pagina-produtos/produto7.html">
-        <img src="imagens/imgp/produtos7/produtoA.jpeg" alt="Imagem produto">
-
-        <h3 class="nome-produto">
-            Mesa de Jantar Jade
-        </h3>
-
-        <p class="valor-produto">
-            R$ 1.499,99
-        </p>
-
-        <p class="parcelas-produto">
-            ou R$ <span class="valor-acrescimo">1.740,00</span> em 12x de 145,00 no Cartão
-        </p>
-    </a>
-</div>
-
-<div class="swiper-slide produto-card">
-    <a href="pagina-produtos/produto8.html">
-        <img src="imagens/imgp/produtos8/produtoA.jpeg" alt="Imagem produto">
-
-        <h3 class="nome-produto">
-            Box Super King Size Vigor
-        </h3>
-
-        <p class="valor-produto">
-            R$ 2.000,00
-        </p>
-
-        <p class="parcelas-produto">
-            ou R$ <span class="valor-acrescimo">2.310,00</span> em 12x de 192,50 no Cartão
-        </p>
-    </a>
-</div>
-
-<div class="swiper-slide produto-card">
-    <a href="pagina-produtos/produto9.html">
-        <img src="imagens/imgp/produtos9/produtoA.jpeg" alt="Imagem produto">
-
-        <h3 class="nome-produto">
-            Sofá Retrátil Reclinável Ibiza
-        </h3>
-
-        <p class="valor-produto">
-            R$ 1.599,99
-        </p>
-
-        <p class="parcelas-produto">
-            ou R$ <span class="valor-acrescimo">1.845,00</span> em 12x de 153,75 no Cartão
-        </p>
-    </a>
-</div>
-
-<div class="swiper-slide produto-card">
-    <a href="pagina-produtos/produto10.html">
-        <img src="imagens/imgp/produtos10/produtoA.jpg" alt="Imagem produto">
-
-        <h3 class="nome-produto">
-            Sofá Imola Onix
-        </h3>
-
-        <p class="valor-produto">
-            R$ 1.499,99
-        </p>
-
-        <p class="parcelas-produto">
-            ou R$ <span class="valor-acrescimo">1.740,00</span> em 12x de 145,00 no Cartão
-        </p>
-    </a>
-</div>
-
-<div class="swiper-slide produto-card">
-    <a href="pagina-produtos/produto11.html">
-        <img src="imagens/imgp/produtos11/produtoA.jpeg" alt="Imagem produto">
-
-        <h3 class="nome-produto">
-            Sofá Retrátil Reclinável Onix
-        </h3>
-
-        <p class="valor-produto">
-            R$ 1.599,00
-        </p>
-
-        <p class="parcelas-produto">
-            ou R$ <span class="valor-acrescimo">1.835,00</span> em 12x de 153,75 no Cartão
-        </p>
-    </a>
-</div>
-
-
-    <div class="swiper-slide produto-card">Produto 3</div>
-    <div class="swiper-slide produto-card">Produto 4</div>
-    <div class="swiper-slide produto-card">Produto 2</div>
-    <div class="swiper-slide produto-card">Produto 3</div>
-    <div class="swiper-slide produto-card">Produto 4</div>
-    <div class="swiper-slide produto-card">Produto 2</div>
-    <div class="swiper-slide produto-card">Produto 3</div>
-    <div class="swiper-slide produto-card">Produto 4</div> -->
-
-  </div>
-
-  <!-- setas -->
-  <div class="swiper-button-prev custom-prev"></div>
-  <div class="swiper-button-next custom-next"></div>
-</div>
-
+    
  
         <!-- </section> 
             <section class="aviso-novidades">
@@ -1791,66 +1456,97 @@ footer {
             });
         });
 
-const vitrines = document.querySelectorAll('.swiper');
+async function carregarProdutos() {
+    
+    const produtos = JSON.parse(localStorage.getItem("produtos")) || [];
 
-vitrines.forEach((vitrine) => {
+    const lista = document.getElementById("listaProdutos");
 
-    const next = vitrine.querySelector('.swiper-button-next');
-    const prev = vitrine.querySelector('.swiper-button-prev');
+    produtos.forEach(produto => {
+        lista.innerHTML += `
+            <div class="swiper-slide produto-card" data-name="${produto.nome.toLowerCase()}">
+                <a href="${produto.link}">
+                    <img src="${produto.imagem}" alt="${produto.nome}">
 
-    const pagination = document.createElement('div');
-    pagination.classList.add('swiper-pagination');
-    vitrine.appendChild(pagination);
+                    <h3 class="nome-produto">${produto.nome}</h3>
 
-    new Swiper(vitrine, {
-        loop: true,
-        speed: 500,
-        spaceBetween: 12,
+                    <p class="valor-produto">${produto.preco}</p>
 
-        navigation: {
-            nextEl: next,
-            prevEl: prev,
-        },
-
-        pagination: {
-            el: pagination,
-            clickable: true,
-        },
-
-        breakpoints: {
-    0: {
-        slidesPerView: 2,
-        slidesPerGroup: 1,
-        spaceBetween: 10,
-    },
-
-    500: {
-        slidesPerView: 2,
-        slidesPerGroup: 1,
-        spaceBetween: 12,
-    },
-
-    900: {
-        slidesPerView: 3,
-        slidesPerGroup: 1,
-    },
-
-    1100: {
-        slidesPerView: 4,
-        slidesPerGroup: 1,
-        spaceBetween: 20,
-    }
-}
+                    <p class="parcelas-produto">
+                        ou <span class="valor-acrescimo">${produto.precoCartao}</span>
+                        em ${produto.parcelas} no Cartão
+                    </p>
+                </a>
+            </div>
+        `;
     });
 
-});
+    iniciarSwipers();
+}
+
+function iniciarSwipers() {
+    const vitrines = document.querySelectorAll(".swiper");
+
+    vitrines.forEach((vitrine) => {
+        const next = vitrine.querySelector(".swiper-button-next");
+        const prev = vitrine.querySelector(".swiper-button-prev");
+
+        const pagination = document.createElement("div");
+        pagination.classList.add("swiper-pagination");
+        vitrine.appendChild(pagination);
+
+        new Swiper(vitrine, {
+            loop: true,
+            speed: 500,
+            spaceBetween: 12,
+
+            navigation: {
+                nextEl: next,
+                prevEl: prev,
+            },
+
+            pagination: {
+                el: pagination,
+                clickable: true,
+            },
+
+            breakpoints: {
+                0: {
+                    slidesPerView: 2,
+                    slidesPerGroup: 1,
+                    spaceBetween: 10,
+                },
+                500: {
+                    slidesPerView: 2,
+                    slidesPerGroup: 1,
+                    spaceBetween: 12,
+                },
+                900: {
+                    slidesPerView: 3,
+                    slidesPerGroup: 1,
+                },
+                1100: {
+                    slidesPerView: 4,
+                    slidesPerGroup: 1,
+                    spaceBetween: 20,
+                }
+            }
+        });
+    });
+}
+
+carregarProdutos();
+
 const searchInput = document.getElementById("searchInput");
-const slides = document.querySelectorAll(".produto-card");
 
 searchInput.addEventListener("input", function () {
+
+    const slides = document.querySelectorAll(".produto-card");
+
     const termo = this.value.toLowerCase().trim();
 
     slides.forEach(slide => {
+
         const titulo = slide.querySelector(".nome-produto");
 
         if (!titulo) return;
@@ -1862,7 +1558,9 @@ searchInput.addEventListener("input", function () {
         } else {
             slide.style.display = "none";
         }
+
     });
+
 });
     </script>
 </body>
