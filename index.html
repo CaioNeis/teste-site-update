@@ -1458,7 +1458,8 @@ footer {
 
 async function carregarProdutos() {
     
-    const produtos = JSON.parse(localStorage.getItem("produtos")) || [];
+    const resposta = await fetch("produtos.json");
+    const produtos = await resposta.json();
 
     const lista = document.getElementById("listaProdutos");
 
@@ -1473,9 +1474,9 @@ async function carregarProdutos() {
                     <p class="valor-produto">${produto.preco}</p>
 
                     <p class="parcelas-produto">
-                        ou <span class="valor-acrescimo">${produto.precoCartao}</span>
-                        em ${produto.parcelas} no Cartão
-                    </p>
+    ou <span class="valor-acrescimo">${produto.precoCartao}</span>
+    em ${produto.parcelas}x de ${produto.valorParcela} no Cartão
+</p>
                 </a>
             </div>
         `;
