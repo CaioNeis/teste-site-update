@@ -536,13 +536,24 @@ header {
 }
 .localizacao-container {
     display: flex;
+    flex-wrap: wrap;
     gap: 20px;
     width: 100%;
     padding: 20px;
     align-items: stretch;
     background-color: #fff;
 }
-
+.localizacao-container h1 {
+    width: 100%;
+    font-family: var(--Black);
+    font-size: 2.4em;
+    font-weight: bolder;
+    color: #0047BB;
+    text-align: center;
+    border-radius: 10px;
+    padding: 10px;
+    background-color:#F4F5F7;
+}
 .localizacao,
 .info-box {
     flex: 1;
@@ -558,11 +569,8 @@ header {
     gap: 20px;
 }
 
-.localizacao h1 {
-    font-size: 2.5rem;
-    color: #0047BB;
-    text-align: center;
-}
+
+
 
 .localizacao iframe {
     width: 100%;
@@ -724,14 +732,18 @@ footer {
 }
 
 /* ===== POSIÇÃO ===== */
+.swiper {
+    overflow: hidden;
+    padding: 0 55px;
+}
+
 .swiper-button-prev {
-    left: 5px;
+    left: 10px;
 }
 
 .swiper-button-next {
-    right: 5px;
+    right: 10px;
 }
-
 
 
 
@@ -1036,8 +1048,15 @@ footer {
 
 
     .produto-card {
-    max-width: 250px;
-  }
+    max-width: 100%;
+    }
+  .swiper-button-next,
+    .swiper-button-prev {
+        display: none !important;
+    }
+    .swiper {
+        padding: 0;
+    }
 
   
 } 
@@ -1235,7 +1254,7 @@ footer {
                 <div class="links" id="navLinks">
                     <a href="#header"><i class="fa fa-home" style="font-size: 30px;"></i></i> INÍCIO</a>
                     <a href="https://www.instagram.com/s.a_moveiseletro/" target="_blank"><i class="fa fa-instagram" style="font-size: 30px;"></i> MÍDIAS</a>
-                    <a class="aloc" href="pagina-localizacao/localizacao.html"><i class="fa fa-map-marker" style="font-size: 30px;"></i> LOCALIZAÇÃO</a>
+                    <a class="aloc" href="#localizacao"><i class="fa fa-map-marker" style="font-size: 30px;"></i> LOCALIZAÇÃO</a>
                     <a id="lwtp" href="#" target="_blank"><i class="fa fa-whatsapp"></i> FALE NO WHATSAPP</a>
                 </div>
             </nav>
@@ -1620,14 +1639,14 @@ footer {
                 <p>🚀 Novos produtos e promoções chegando! Nosso catálogo está em expansão.</p>
             </section> -->
 
-        <section class="localizacao-container">
-
+        <section class="localizacao-container" id="localizacao">
+        <h1>
+                    Nossa localização
+                    <i class="fa fa-map-marker" style="font-size: 30px;"></i>
+                </h1>
     <div class="localizacao">
 
-        <h1>
-            Nossa localização
-            <i class="fa fa-map-marker" style="font-size: 30px;"></i>
-        </h1>
+       
  
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d993.4522006178613!2d-42.78579006900914!3d-5.134468860992902!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x78e31006960adf3%3A0xe3db99e6a61222d0!2sS%20A%20M%C3%93VEISELETRO!5e0!3m2!1spt-BR!2sbr!4v1778517664842!5m2!1spt-BR!2sbr" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
         </iframe>
@@ -1762,8 +1781,6 @@ footer {
             });
         });
 
-
-
 const vitrines = document.querySelectorAll('.swiper');
 
 vitrines.forEach((vitrine) => {
@@ -1780,9 +1797,6 @@ vitrines.forEach((vitrine) => {
         speed: 500,
         spaceBetween: 12,
 
-        slidesPerView: 2,
-        slidesPerGroup: 2,
-
         navigation: {
             nextEl: next,
             prevEl: prev,
@@ -1794,24 +1808,31 @@ vitrines.forEach((vitrine) => {
         },
 
         breakpoints: {
-            0: {
-                slidesPerView: 2,
-                slidesPerGroup: 2,
-            },
+    0: {
+        slidesPerView: 1,
+        slidesPerGroup: 1,
+    },
 
-            768: {
-                slidesPerView: 2,
-                slidesPerGroup: 2,
-            },
+    500: {
+        slidesPerView: 2,
+        slidesPerGroup: 1,
+    },
 
-            1100: {
-                slidesPerView: 4,
-                slidesPerGroup: 1,
-            }
-        }
+    900: {
+        slidesPerView: 3,
+        slidesPerGroup: 1,
+    },
+
+    1100: {
+        slidesPerView: 4,
+        slidesPerGroup: 1,
+        spaceBetween: 20,
+    }
+
+}
     });
-});
 
+});
 const searchInput = document.getElementById("searchInput");
 const slides = document.querySelectorAll(".produto-card");
 
