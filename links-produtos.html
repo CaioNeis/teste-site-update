@@ -338,65 +338,88 @@
     });
 
         async function carregarProdutos() {
+    let catalogo = JSON.parse(localStorage.getItem("produtos"));
 
-            const resposta = await fetch("produtos.json");
+    if (!catalogo) {
+        const resposta = await fetch("produtos.json");
+        catalogo = await resposta.json();
+    }
 
-            const produtos = await resposta.json();
+    let produtos = [];
 
-            const lista = document.getElementById("listaProdutos");
+    if (Array.isArray(catalogo)) {
+        produtos = catalogo;
+    } else {
+        produtos = [
+            ...(catalogo.bloco1 || catalogo.roupeiros || []),
+            ...(catalogo.bloco2 || catalogo.sofas || []),
+            ...(catalogo.bloco3 || catalogo.mesas || []),
+            ...(catalogo.bloco4 || catalogo.camas || []),
+            ...(catalogo.bloco5 || catalogo.eletros || [])
+        ];
+    }
 
-            const pesquisa = document.getElementById("pesquisa");
+    const lista = document.getElementById("listaProdutos");
+    const pesquisa = document.getElementById("pesquisa");
 
-            function mostrarProdutos() {
+    function mostrarProdutos() {
+        lista.innerHTML = "";
 
-                lista.innerHTML = "";
+        const termo = pesquisa.value.toLowerCase().trim();
 
-                const termo = pesquisa.value.toLowerCase().trim();
+        let encontrouProduto = false;
 
-                produtos.forEach(produto => {
-
-                    if (!produto.nome.toLowerCase().includes(termo)) return;
-
-                    const linkCompleto = new URL(produto.link, window.location.origin).href;
-
-                    lista.innerHTML += `
-                        <div class="produto-card">
-
-                            <img src="${produto.imagem}" alt="${produto.nome}">
-
-                            <div class="produto-info">
-
-                                <h2>${produto.nome}</h2>
-
-                                <p>${produto.preco}</p>
-
-                                <small>${linkCompleto}</small>
-
-                            </div>
-
-                            <button class="btn-copy" onclick="copiarLink('${linkCompleto}')">
-                                Copiar link
-                            </button>
-
-                        </div>
-                    `;
-                });
+        produtos.forEach(produto => {
+            if (!produto.nome.toLowerCase().includes(termo)) {
+                return;
             }
 
-            pesquisa.addEventListener("input", mostrarProdutos);
+            encontrouProduto = true;
 
-            mostrarProdutos();
+            const linkCompleto = new URL(produto.link, window.location.origin).href;
+
+            lista.innerHTML += `
+                <div class="produto-card">
+                    <img src="${produto.imagem}" alt="${produto.nome}">
+
+                    <div class="produto-info">
+                        <h2>${produto.nome}</h2>
+
+                        <p>${produto.preco}</p>
+
+                        <small>${linkCompleto}</small>
+                    </div>
+
+                    <button class="btn-copy" onclick="copiarLink('${linkCompleto}')">
+                        Copiar link
+                    </button>
+                </div>
+            `;
+        });
+
+        if (!encontrouProduto) {
+            lista.innerHTML = `
+                <div class="produto-card" style="grid-template-columns: 1fr;">
+                    <div class="produto-info">
+                        <h2>Nenhum produto encontrado</h2>
+                        <small>Verifique se o produto foi cadastrado no catálogo.</small>
+                    </div>
+                </div>
+            `;
         }
+    }
 
-        function copiarLink(link) {
+    pesquisa.addEventListener("input", mostrarProdutos);
 
-            navigator.clipboard.writeText(link);
+    mostrarProdutos();
+}
+function copiarLink(link) {
+    navigator.clipboard.writeText(link).then(function () {
+        alert("Link copiado!");
+    });
+}
 
-            alert("Link copiado!");
-        }
-
-        carregarProdutos();
-
+carregarProdutos();
     </script>
 
 </body>
