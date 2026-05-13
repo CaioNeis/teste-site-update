@@ -1064,61 +1064,12 @@ footer {
 
 /* Tablets portrait / celulares grandes - ATIVA MENU HAMBÚRGUER */
  @media (max-width: 768px) { 
-    /* Mostra o botão hambúrguer */
-     .menu-toggle {
-        display: flex;
-        width: 100%;
-        justify-content: center;
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        flex-direction: column;
-        align-items: flex-end;
-    }
+    
 
     .navbar1 {
-        padding: 0px 20px;    
+        padding: 0px 10px;    
     }
-
-    .nomeloja-nav {
-        justify-content: center;
-        align-items: center;
-        display: flex;
-        font-family: var(--Black);
-        font-weight: 800;
-        font-size: 1.5em;
-        color: #1a1919;
-        transition: 0.5s;
-        padding: 10px;
-        color: white;
-         
-    }
-    .S, .A, .ELETROO, .MOVEISS {
-        color: white;
-}
-    .navbar {
-        box-shadow: none;
-        justify-content: center; 
-     } 
-    /* Links ficam em coluna e escondidos por padrão */
-    .links {
-        position: absolute;
-        top: 45px;
-        right: -27px;
-        width: 250px;
-        flex-direction: column;
-        align-items: stretch;
-        background: #b90c29;
-        backdrop-filter: blur(15px);
-        border-radius: 8px;
-        padding: 12px;
-        box-shadow: 0 20px 35px rgba(0,0,0,0.25);
-
-        opacity: 0;
-        transform: translateY(-15px);
-        pointer-events: none;
-        transition: all 0.35s ease;
-    }
+/* Mostra o botão hambúrguer */
     
     /* Quando ativo, mostra o menu */
     .links.active {
@@ -1227,6 +1178,57 @@ footer {
 
   
 } 
+@media (max-width: 670px) {
+         .menu-toggle {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        flex-direction: column;
+        align-items: flex-end;
+    }
+    .nomeloja-nav {
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        font-family: var(--Black);
+        font-weight: 800;
+        font-size: 1.5em;
+        color: #1a1919;
+        transition: 0.5s;
+        padding: 10px;
+        color: white;
+         
+    }
+    .S, .A, .ELETROO, .MOVEISS {
+        color: white;
+}
+    .navbar {
+        box-shadow: none;
+        justify-content: center; 
+     } 
+    /* Links ficam em coluna e escondidos por padrão */
+    .links {
+        position: absolute;
+        top: 45px;
+        right: -27px;
+        width: 250px;
+        flex-direction: column;
+        align-items: stretch;
+        background: #b90c29;
+        backdrop-filter: blur(15px);
+        border-radius: 8px;
+        padding: 12px;
+        box-shadow: 0 20px 35px rgba(0,0,0,0.25);
+
+        opacity: 0;
+        transform: translateY(-15px);
+        pointer-events: none;
+        transition: all 0.35s ease;
+    }
+}
 
 @media (max-width: 650px) {
     .imglogo {
