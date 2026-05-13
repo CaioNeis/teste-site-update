@@ -1,0 +1,17 @@
+{
+    "bloco1": [
+        {
+            "nome": "Guarda Roupas Solteiro",
+            "preco": "R$ 650,00",
+            "precoCartao": "R$ 750,00",
+            "parcelas": 10,
+            "valorParcela": "R$ 75,00",
+            "imagem": "imgens/produtoA.jpeg",
+            "link": "https://sa-moveis.github.io/pagina-produtos/produto2.html"
+        }
+    ],
+    "bloco2": [],
+    "bloco3": [],
+    "bloco4": [],
+    "bloco5": []
+}
