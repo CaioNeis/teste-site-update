@@ -83,9 +83,9 @@
             flex-direction: column;
             gap: 14px;
         }
-
         input,
-        textarea {
+        textarea,
+        select {
             width: 100%;
             padding: 14px;
             border-radius: 12px;
@@ -102,6 +102,28 @@
             border-color: var(--azul-sa);
             box-shadow: 0 0 0 4px rgba(0,71,187,0.10);
         }
+
+        .bloco-card {
+            margin-bottom: 25px;
+        }
+
+        .bloco-card label {
+            display: block;
+            font-weight: 700;
+            color: var(--azul-escuro);
+            margin-bottom: 10px;
+        }
+
+        .bloco-card select {
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+
+        .bloco-card small {
+            color: #555;
+            font-weight: 500;
+        }
+
 
         .btn {
             border: none;
@@ -255,7 +277,52 @@
     margin-top: 15px;
     font-weight: bold;
 }
+
+.grid > .card {
+    height: 620px;
+    display: flex;
+    flex-direction: column;
+}
+
+#pesquisaAdmin {
+    flex-shrink: 0;
+}
+
+#listaProdutosAdmin {
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    padding-right: 8px;
+}
+
+/* Barra de rolagem mais bonita */
+#listaProdutosAdmin::-webkit-scrollbar {
+    width: 8px;
+}
+
+#listaProdutosAdmin::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 20px;
+}
+
+#listaProdutosAdmin::-webkit-scrollbar-thumb {
+    background: #b90c29;
+    border-radius: 20px;
+}
+
+#listaProdutosAdmin::-webkit-scrollbar-thumb:hover {
+    background: #8e081f;
+}
         @media (max-width: 900px) {
+
+        .grid > .card {
+        height: auto;
+        }
+
+        #listaProdutosAdmin {
+            max-height: 500px;
+            overflow-y: auto;
+        }
             .grid {
                 grid-template-columns: 1fr;
             }
@@ -282,6 +349,36 @@
                 flex: 1;
             }
         }
+
+        .json-wrapper {
+    position: relative;
+}
+
+.btn-copy-json {
+    position: absolute;
+    top: 12px;
+    right: 25px;
+    z-index: 2;
+    border: none;
+    border-radius: 10px;
+    padding: 8px 12px;
+    background: #1f2937;
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.18);
+}
+
+.btn-copy-json:hover {
+    background: var(--azul-sa);
+    
+}
+
+#jsonGerado {
+    padding-top: 50px;
+}
 
     </style>
 </head>
@@ -348,6 +445,24 @@
             <p>Painel de gerenciamento de produtos da vitrine</p>
         </div>
 
+        <div class="card bloco-card">
+    <label for="blocoAtual">
+        Escolha o bloco de produtos
+    </label>
+
+    <select id="blocoAtual">
+        <option value="roupeiros">Bloco 1 - Roupeiros / Guarda-roupas</option>
+        <option value="sofas">Bloco 2 - Sofás</option>
+        <option value="mesas">Bloco 3 - Mesas</option>
+        <option value="camas">Bloco 4 - Camas</option>
+        <option value="eletros">Bloco 5 - Eletros</option>
+    </select>
+
+    <small>
+        Os produtos adicionados, editados ou removidos serão alterados somente no bloco selecionado.
+    </small>
+</div>
+
         <div class="grid">
 
             <div class="card">
@@ -387,7 +502,13 @@
                 Baixar produtos.json
             </button>
 
-            <textarea id="jsonGerado"></textarea>
+            <div class="json-wrapper">
+    <button type="button" class="btn-copy-json" id="copiarJson">
+        Copiar
+    </button>
+
+    <textarea id="jsonGerado" readonly></textarea>
+</div>
         </div>
 
     </div>
@@ -396,7 +517,34 @@
     // ===============================
     // DADOS PRINCIPAIS
     // ===============================
-    let produtos = JSON.parse(localStorage.getItem("produtos")) || [];
+    const blocosPadrao = {
+        roupeiros: [],
+        sofas: [],
+        mesas: [],
+        camas: [],
+        eletros: []
+    };
+
+    function carregarProdutos() {
+        const dadosSalvos = JSON.parse(localStorage.getItem("produtos")) || {};
+
+        if (Array.isArray(dadosSalvos)) {
+            return {
+                roupeiros: dadosSalvos,
+                sofas: [],
+                mesas: [],
+                camas: [],
+                eletros: []
+            };
+        }
+
+        return {
+            ...blocosPadrao,
+            ...dadosSalvos
+        };
+    }
+
+    let produtos = carregarProdutos();
     let produtoEditando = null;
 
     // ===============================
@@ -408,6 +556,8 @@
     const baixarJson = document.getElementById("baixarJson");
     const botaoSubmit = form.querySelector("button[type='submit']");
     const pesquisaAdmin = document.getElementById("pesquisaAdmin");
+    const copiarJson = document.getElementById("copiarJson");
+    const blocoAtual = document.getElementById("blocoAtual");
 
     const nomeInput = document.getElementById("nome");
     const precoInput = document.getElementById("preco");
@@ -415,6 +565,28 @@
     const parcelasInput = document.getElementById("parcelas");
     const imagemInput = document.getElementById("imagem");
     const linkInput = document.getElementById("link");
+
+    // ===============================
+    // FUNÇÕES DOS BLOCOS
+    // ===============================
+    function pegarBlocoAtual() {
+        return blocoAtual.value;
+    }
+
+    function pegarProdutosDoBlocoAtual() {
+        const bloco = pegarBlocoAtual();
+
+        if (!produtos[bloco]) {
+            produtos[bloco] = [];
+        }
+
+        return produtos[bloco];
+    }
+
+    function salvarProdutos() {
+        localStorage.setItem("produtos", JSON.stringify(produtos));
+        jsonGerado.value = JSON.stringify(produtos, null, 4);
+    }
 
     // ===============================
     // FORMATAR PREÇO EM REAL
@@ -460,7 +632,7 @@
     // ===============================
     // ADICIONAR OU SALVAR ALTERAÇÃO
     // ===============================
-    form.addEventListener("submit", function(e) {
+    form.addEventListener("submit", function (e) {
         e.preventDefault();
 
         const produto = {
@@ -473,37 +645,34 @@
             link: linkInput.value
         };
 
+        const produtosDoBloco = pegarProdutosDoBlocoAtual();
+
         if (produtoEditando === null) {
+            const confirmarAdicao = confirm(
+                `Deseja realmente adicionar o produto "${produto.nome}" neste bloco?`
+            );
 
-    const confirmarAdicao = confirm(
-        `Deseja realmente adicionar o produto "${produto.nome}"?`
-    );
+            if (!confirmarAdicao) {
+                return;
+            }
 
-    if (!confirmarAdicao) {
-        return;
-    }
+            produtosDoBloco.push(produto);
+        } else {
+            const confirmarEdicao = confirm(
+                `Deseja realmente salvar as alterações do produto "${produto.nome}"?`
+            );
 
-    produtos.push(produto);
+            if (!confirmarEdicao) {
+                return;
+            }
 
-} else {
+            produtosDoBloco[produtoEditando] = produto;
 
-    const confirmarEdicao = confirm(
-        `Deseja realmente salvar as alterações do produto "${produto.nome}"?`
-    );
+            produtoEditando = null;
+            botaoSubmit.textContent = "Adicionar produto";
+        }
 
-    if (!confirmarEdicao) {
-        return;
-    }
-
-    produtos[produtoEditando] = produto;
-
-    produtoEditando = null;
-
-    botaoSubmit.textContent = "Adicionar produto";
-}
-
-        localStorage.setItem("produtos", JSON.stringify(produtos));
-
+        salvarProdutos();
         form.reset();
         atualizarTela();
     });
@@ -515,13 +684,18 @@
         lista.innerHTML = "";
 
         const termo = pesquisaAdmin.value.toLowerCase().trim();
+        const produtosDoBloco = pegarProdutosDoBlocoAtual();
 
-        produtos.forEach((produto, index) => {
+        let encontrouProduto = false;
+
+        produtosDoBloco.forEach((produto, index) => {
             const nomeProduto = produto.nome.toLowerCase();
 
             if (!nomeProduto.includes(termo)) {
                 return;
             }
+
+            encontrouProduto = true;
 
             lista.innerHTML += `
                 <div class="produto-item">
@@ -546,6 +720,17 @@
             `;
         });
 
+        if (!encontrouProduto) {
+            lista.innerHTML = `
+                <div class="produto-item">
+                    <div class="produto-info">
+                        <h3>Nenhum produto neste bloco</h3>
+                        <p>Cadastre um produto para este bloco selecionado.</p>
+                    </div>
+                </div>
+            `;
+        }
+
         jsonGerado.value = JSON.stringify(produtos, null, 4);
     }
 
@@ -553,7 +738,7 @@
     // EDITAR PRODUTO
     // ===============================
     function editarProduto(index) {
-        const produto = produtos[index];
+        const produto = pegarProdutosDoBlocoAtual()[index];
 
         nomeInput.value = produto.nome;
         precoInput.value = produto.preco;
@@ -575,20 +760,21 @@
     // REMOVER PRODUTO
     // ===============================
     function removerProduto(index) {
-    const produto = produtos[index];
+        const produtosDoBloco = pegarProdutosDoBlocoAtual();
+        const produto = produtosDoBloco[index];
 
-    const confirmar = confirm(
-        `Tem certeza que deseja remover o produto "${produto.nome}"?\n\nEssa ação não pode ser desfeita.`
-    );
+        const confirmar = confirm(
+            `Tem certeza que deseja remover o produto "${produto.nome}"?\n\nEssa ação não pode ser desfeita.`
+        );
 
-    if (!confirmar) {
-        return;
+        if (!confirmar) {
+            return;
+        }
+
+        produtosDoBloco.splice(index, 1);
+        salvarProdutos();
+        atualizarTela();
     }
-
-    produtos.splice(index, 1);
-    localStorage.setItem("produtos", JSON.stringify(produtos));
-    atualizarTela();
-}
 
     // ===============================
     // BAIXAR JSON
@@ -611,10 +797,41 @@
     // ===============================
     pesquisaAdmin.addEventListener("input", atualizarTela);
 
+    // ===============================
+    // TROCAR DE BLOCO
+    // ===============================
+    blocoAtual.addEventListener("change", function () {
+        produtoEditando = null;
+        botaoSubmit.textContent = "Adicionar produto";
+        pesquisaAdmin.value = "";
+        form.reset();
+        atualizarTela();
+    });
+
+    // ===============================
+    // COPIAR JSON
+    // ===============================
+    copiarJson.addEventListener("click", function () {
+        navigator.clipboard.writeText(jsonGerado.value).then(function () {
+            copiarJson.textContent = "Copiado!";
+
+            setTimeout(function () {
+                copiarJson.textContent = "Copiar";
+            }, 1500);
+        }).catch(function () {
+            jsonGerado.select();
+            document.execCommand("copy");
+
+            copiarJson.textContent = "Copiado!";
+
+            setTimeout(function () {
+                copiarJson.textContent = "Copiar";
+            }, 1500);
+        });
+    });
+
     atualizarTela();
 </script>
 
 </body>
 </html>
-```
->

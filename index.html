@@ -1456,39 +1456,53 @@ footer {
                 scrollSuave(alvo, 1100);
             });
         });
-async function carregarProdutos() {
-    
-    let produtos = JSON.parse(localStorage.getItem("produtos"));
+        async function carregarProdutos() {
+            
+            let catalogo = JSON.parse(localStorage.getItem("produtos"));
 
-    if (!produtos || produtos.length === 0) {
-        const resposta = await fetch("produtos.json");
-        produtos = await resposta.json();
-    }
+            if (!catalogo) {
+                const resposta = await fetch("produtos.json");
+                catalogo = await resposta.json();
+            }
 
-    const lista = document.getElementById("listaProdutos");
+            let produtos = [];
 
-    produtos.forEach(produto => {
-        lista.innerHTML += `
-            <div class="swiper-slide produto-card" data-name="${produto.nome.toLowerCase()}">
-                <a href="${produto.link}">
-                    <img src="${produto.imagem}" alt="${produto.nome}">
+            if (Array.isArray(catalogo)) {
+                produtos = catalogo;
+            } else {
+                produtos = [
+                    ...(catalogo.roupeiros || []),
+                    ...(catalogo.sofas || []),
+                    ...(catalogo.mesas || []),
+                    ...(catalogo.camas || []),
+                    ...(catalogo.eletros || [])
+                ];
+            }
 
-                    <h3 class="nome-produto">${produto.nome}</h3>
+            const lista = document.getElementById("listaProdutos");
+            lista.innerHTML = "";
 
-                    <p class="valor-produto">${produto.preco}</p>
+            produtos.forEach(produto => {
+                lista.innerHTML += `
+                    <div class="swiper-slide produto-card" data-name="${produto.nome.toLowerCase()}">
+                        <a href="${produto.link}">
+                            <img src="${produto.imagem}" alt="${produto.nome}">
 
-                    <p class="parcelas-produto">
-    ou <span class="valor-acrescimo">${produto.precoCartao}</span>
-    em ${produto.parcelas}x de ${produto.valorParcela} no Cartão
-</p>
-                </a>
-            </div>
-        `;
-    });
+                            <h3 class="nome-produto">${produto.nome}</h3>
 
-    iniciarSwipers();
-}
+                            <p class="valor-produto">${produto.preco}</p>
 
+                            <p class="parcelas-produto">
+                                ou <span class="valor-acrescimo">${produto.precoCartao}</span>
+                                em ${produto.parcelas}x de ${produto.valorParcela} no Cartão
+                            </p>
+                        </a>
+                    </div>
+                `;
+            });
+
+            iniciarSwipers();
+        }
 function iniciarSwipers() {
     const vitrines = document.querySelectorAll(".swiper");
 
@@ -1569,4 +1583,4 @@ searchInput.addEventListener("input", function () {
 });
     </script>
 </body>
-</html>>
+</html>
